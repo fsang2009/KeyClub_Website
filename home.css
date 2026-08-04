@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+
+}
+
+.navbar{
+    width: 85%;
+    display: flex;
+    gap: 30px;
+    justify-content: right;
+    padding: 10px;
+    align-items: center;
+    height: clamp(70px, 7dvh, 100px);
+}
+
+
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.upcoming-events{
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.event-card{
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.top-filler{
+    background-color: lch(69.55% 42.99 247.26 / 0.993);
+    height: 40px;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-filler::before{
+    content: "";
+    position: absolute;
+
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    background-color: rgba(5, 158, 247, 0.3);
+    bottom: -30px;
+    left: -25px;
+}
+
+.top-filler::after{
+    content: "";
+    position: absolute;
+
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;;
+
+     background-color: transparent;
+    border: 5px solid rgba(5, 158, 247,0.6);;
+    top: -40px;
+    right: 80px;
+}
+/* 
+Main body
+Main body
+Main body
+*/
+
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-welcome{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+
+}
+
+.welcome{
+    width: 85%;
+    height: 100vh;
+    display: flex;   
+}
+
+.landing-intro{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.landing-intro h1{
+    text-transform: uppercase;
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.landing-combo{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.landing-intro-captions{
+    margin-top: 20px;
+    font-size: 36px;
+    color: rgba(256, 256, 256);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+
+
+.landing-join{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.header-options{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.landing-join-button{
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform:  uppercase;
+    letter-spacing: 0.6px;;
+    background-color: rgb(0, 225, 255);
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    gap: 5px;
+    transition: box-shadow 0.3s ease, 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+.logobtn-image{
+    width: 30px;
+
+}
+
+.landing-join-button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+   background-color: rgb(0, 225, 255); ;
+}
+.about-button{
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    
+    color: white;
+    letter-spacing: 0.6px;
+     border: 2px solid rgba(255, 255, 255, 0.75);
+       transition: box-shadow 0.3s ease, 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    }
+.about-button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+   
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.main-welcome{
+    display: flex;
+    width: 100%;
+}
+
+.main-welcome-first-half{
+    padding: 40px 0px;
+    padding-left: 60px;
+    padding-right: 20px;
+    background-color: lch(69.55% 42.99 247.26 / 0.993);
+      position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.main-welcome-first-half::before{
+     content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  background-color: rgba(5, 158, 247, 0.3);
+
+  top: -140px;
+  right: -130px;
+  z-index: 0;
+}
+
+.main-welcome-first-half::after{
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    background-color: transparent;
+    border: 25px solid rgba(5, 158, 247, 0.3);
+
+    bottom: -80px;
+    left: -130px;
+    z-index: 0;
+}
+
+.main-welcome-first-half > *{
+    position: relative;
+    z-index: 1;
+}
+.main-welcome-second-half{
+
+}
+
+
+.mission{
+    padding: 30px;
+    
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 1px;
+    gap: 20px;
+
+}
+
+
+.mission h1{
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 70px;
+}
+
+.mission p{
+    font-size: 20px;
+    font-family
+    :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.description-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.pledge{
+
+}
+
+/*
+Carousel
+Carousel
+Carousel
+*/
+.carousel {
+    display: flex;
+    border: 1px solid;
+    width: 90%;
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex: 0 0 auto;
+}
+
+.card{
+    flex: 0 0 200px;
+    height: 100px;
+    padding: 10px;
+    background-color: aqua;
+    text-align: center;
+    align-items: center;
+    border-radius: 5px;
+}
