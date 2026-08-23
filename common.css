@@ -1,10 +1,104 @@
+/* ============================================ */
+/* COMMON.CSS - SHARED STYLES ACROSS PAGES      */
+/* ============================================ */
+
+/* CSS Reset - Already handled in individual CSS files, 
+   but kept here for consistency */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.eyebrow{
+/* ============================================ */
+/* BODY & BASE STYLES                           */
+/* ============================================ */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ffffff;
+    color: #1f2937;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
+/* ============================================ */
+/* EYEBROW COMPONENT STYLES                     */
+/* ============================================ */
+.eyebrow {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================ */
+/* SHARED ANIMATION KEYFRAMES                   */
+/* ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================ */
+/* UTILITY CLASSES                              */
+/* ============================================ */
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* ============================================ */
+/* ACCESSIBILITY IMPROVEMENTS                  */
+/* ============================================ */
+a:focus,
+button:focus {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1e40af;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 0;
 }
 
