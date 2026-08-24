@@ -6,7 +6,7 @@
     <title>Southport Key Club | Home</title>
     <link rel ="stylesheet" href ="../css/common.css">
     <link rel = "stylesheet" href="../css/home.css"/>
-    <script type="module" src="../js/home.js" defer></script>
+    <script type="module" src="../js/home.js"></script>
     
 </head>
 <body>
@@ -208,7 +208,7 @@
                 <span class="close-btn" id ="loginCloseBtn">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="loginForm" onsubmit="handleLogin(event)">
+                <form id="loginForm">
                     <div class="form-group">
                         <label for="loginEmail">Email</label>
                         <input type="email" id="loginEmail" name="email" required placeholder="Enter your email">
@@ -236,7 +236,7 @@
                 <span class="close-btn" id ="registerCloseBtn">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="registerForm" onsubmit="handleRegister(event)">
+                <form id="registerForm">
                     <div class="form-group">
                         <label for="registerEmail">Email</label>
                         <input type="email" id="registerEmail" name="email" required placeholder="Enter your email">
@@ -254,7 +254,7 @@
                 
                 <div class="google-signup">
                     <p>Or register with:</p>
-                    <button type="button" class="google-btn" onclick="handleGoogleSignup()">
+                    <button type="button" class="google-btn" >
                         <svg class="google-icon" viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -266,7 +266,7 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
                 </div>
             </div>
         </div>

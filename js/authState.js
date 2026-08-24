@@ -1,4 +1,4 @@
-import {auth } from 'firebase/auth';
+import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 
 export function getCurrentUser(){
