@@ -290,6 +290,16 @@ a {
     gap: 16px;
 }
 
+.deadline-message {
+    margin: 8px 0 0 0;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+}
+
 .landing-join {
     max-width: 420px;
     margin: 0;
@@ -812,6 +822,124 @@ a {
 }
 
 /* =========================================================
+   CTA BANNER
+   ========================================================= */
+
+.cta-banner {
+    position: relative;
+    padding: 80px 22px;
+    background:
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    right: -150px;
+    top: -150px;
+    border: 60px solid rgba(247, 189, 50, 0.08);
+    border-radius: 50%;
+}
+
+.cta-banner::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    left: -80px;
+    bottom: -80px;
+    border: 45px solid rgba(247, 189, 50, 0.06);
+    border-radius: 50%;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, var(--content));
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-title {
+    margin: 0 0 12px;
+    color: var(--gold);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.cta-subtitle {
+    margin: 0 0 40px;
+    color: #afc2df;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 3vw, 32px);
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.countdown-number {
+    min-width: 80px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(247, 189, 50, 0.5);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.countdown-label {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-2));
+    color: var(--navy);
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    font-weight: 850;
+    letter-spacing: 0.02em;
+    transition: all 180ms ease;
+    box-shadow: 0 12px 35px rgba(247, 189, 50, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(247, 189, 50, 0.5);
+    background: linear-gradient(135deg, var(--gold-2), var(--gold));
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* =========================================================
    UPCOMING EVENTS
    ========================================================= */
 
@@ -1011,6 +1139,9 @@ a:focus-visible {
     position: relative;
     overflow: hidden;
     margin-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .login-register-btn::before {
@@ -1036,6 +1167,27 @@ a:focus-visible {
 
 .login-register-btn:active {
     transform: translateY(-1px) scale(1.02);
+}
+
+.news-badge {
+    padding: 4px 10px;
+    background: rgba(9, 40, 91, 0.15);
+    color: #ffffff;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 /* =========================================================
@@ -1154,6 +1306,34 @@ a:focus-visible {
     outline: none;
     border-color: var(--blue);
     box-shadow: 0 0 0 3px rgba(21, 101, 216, 0.1);
+}
+
+.error-message {
+    margin-top: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #dc2626;
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border: 1px solid #fecaca;
+    border-radius: var(--radius-sm);
+    display: none;
+    animation: slideDown 0.2s ease;
+}
+
+.error-message.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .submit-btn {

@@ -22,12 +22,14 @@
     <!-- ============================================ -->
     <section class ="header">
         <section class ="navbar">
-            <a href ="index.html">Home</a>
-            <a href ="about.html">About us</a>
-            <a href ="contact.html">Contact Us</a>
-            <a href ="calendar.html">Calendar</a>
-            <a href ="join.html">Join Us</a>
-            <button class="login-register-btn" id= "account-auth-button">Login / Register</button>
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="calendar.html">Calendar</a>
+            <button class="login-register-btn" id= "account-auth-button">
+                <span class="btn-text">Login / Register</span>
+                <span class="news-badge">For More News!</span>
+            </button>
            
         </section>
 
@@ -49,9 +51,10 @@
                         <div class="header-options">
                     <p class ="landing-join">Become a Member Today</p>
                         <div class ="buttons">
-                        <a href ="join.html" class="landing-join-button"> <img class = "logobtn-image" src ="assets/images/profile.png">Join us</a>    
+                        <a href ="https://docs.google.com/forms/d/e/1FAIpQLSdqlZ0If18TSGMRHeCyarc1syKZwKyrvUpT0DK4D-Tws2wx3Q/viewform?usp=dialog" target="_blank" class="landing-join-button"> <img class = "logobtn-image" src ="assets/images/profile.png">Join us</a>    
                         <a href ="about.html" class ="about-button">About us</a>
                         </div>
+                        <p class="deadline-message">Deadline to join is September 4th</p>
                         </div>
                     </div>
                 </div>
@@ -124,20 +127,20 @@
         </div>
         <div class="stats-container">
             <div class="stat-item">
-                <h2 class="stat-number">150+</h2>
-                <p class="stat-label">Active Members</p>
+                <h2 class="stat-number">270+</h2>
+                <p class="stat-label">Members</p>
             </div>
             <div class="stat-item">
-                <h2 class="stat-number">5000+</h2>
-                <p class="stat-label">Service Hours</p>
+                <h2 class="stat-number">700+</h2>
+                <p class="stat-label">Service Hours Yearly</p>
             </div>
             <div class="stat-item">
                 <h2 class="stat-number">50+</h2>
                 <p class="stat-label">Events Per Year</p>
             </div>
             <div class="stat-item">
-                <h2 class="stat-number">25+</h2>
-                <p class="stat-label">Years of Service</p>
+                <h2 class="stat-number">7+</h2>
+                <p class="stat-label">Community Partners</p>
             </div>
         </div>
     </section>
@@ -161,41 +164,32 @@
 
     
     <!-- ============================================ -->
-    <!-- UPCOMING EVENTS - Next club meetings/events  -->
+    <!-- CTA BANNER - Deadline countdown              -->
     <!-- ============================================ -->
-    <section class ="upcoming-events">
-        <article class ="event-card">
-            <div class ="event-card-header">
-                <h1>Callout Meeting</h1>
+    <section class="cta-banner">
+        <div class="cta-content">
+            <h2 class="cta-title">Don't Miss Out!</h2>
+            <p class="cta-subtitle">Join Key Club before the deadline</p>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
             </div>
-            <div class ="info">
-                <p>Date: August 25, 2026</p>
-                <p>Time: 3:00 PM - 4:00 PM</p>
-                <p>Location: Southport High School - Room 204</p>
-
-
-            </div>
-        </article>
-        <article class ="event-card">
-            <div class ="event-card-header">
-                <h1>First Regular Meeting</h1>
-            </div>
-            <div class ="info">
-                <p>Date: September 1, 2026</p>
-                <p>Time: 3:00 PM - 4:00 PM</p>
-                <p>Location: Southport High School - Cafeteria</p>
-            </div>
-        </article>
-        <article class ="event-card">
-            <div class ="event-card-header">
-                <h1>Community Service Day</h1>
-            </div>
-            <div class ="info">
-                <p>Date: September 15, 2026</p>
-                <p>Time: 9:00 AM - 12:00 PM</p>
-                <p>Location: Local Food Bank</p>
-            </div>
-        </article>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqlZ0If18TSGMRHeCyarc1syKZwKyrvUpT0DK4D-Tws2wx3Q/viewform?usp=dialog" target ="_blank" class="cta-button">Join Now</a>
+        </div>
     </section>
 
     <!-- ============================================ -->
@@ -212,10 +206,12 @@
                     <div class="form-group">
                         <label for="loginEmail">Email</label>
                         <input type="email" id="loginEmail" name="email" required placeholder="Enter your email">
+                        <div class="error-message" id="loginEmailError"></div>
                     </div>
                     <div class="form-group">
                         <label for="loginPassword">Password</label>
                         <input type="password" id="loginPassword" name="password" required placeholder="Enter your password">
+                        <div class="error-message" id="loginPasswordError"></div>
                     </div>
                     <button type="submit" class="submit-btn">Login</button>
                 </form>
@@ -236,25 +232,29 @@
                 <span class="close-btn" id ="registerCloseBtn">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="registerForm" onsubmit="handleRegister(event)">
+                <form id="registerForm">
                     <div class="form-group">
                         <label for="registerEmail">Email</label>
                         <input type="email" id="registerEmail" name="email" required placeholder="Enter your email">
+                        <div class="error-message" id="registerEmailError"></div>
                     </div>
                     <div class="form-group">
                         <label for="registerPassword">Password</label>
                         <input type="password" id="registerPassword" name="password" required placeholder="Create a password">
+                        <div class="error-message" id="registerPasswordError"></div>
                     </div>
                     <div class="form-group">
                         <label for="registerBirthday">Birthday</label>
                         <input type="date" id="registerBirthday" name="birthday" required>
+                        <div class="error-message" id="registerBirthdayError"></div>
                     </div>
                     <button type="submit" class="submit-btn">Register</button>
+                     <div class="error-message" id="registerGeneralError"></div>
                 </form>
                 
                 <div class="google-signup">
                     <p>Or register with:</p>
-                    <button type="button" class="google-btn" id="googleSignupBtn">
+                    <button type="button" class="google-btn" id="googleRegisterBtn">
                         <svg class="google-icon" viewBox="0 0 24 24">
                             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
