@@ -21,15 +21,16 @@
     <!-- HEADER & NAVIGATION - Main site navigation   -->
     <!-- ============================================ -->
     <section class ="header">
-        <section class ="navbar">
+        <section class="navbar">
+            <span class="navbar-brand">SOUTHPORT HIGH SCHOOL KEY CLUB</span>
             <a href="index.html">Home</a>
             <a href="about.html">About us</a>
             <a href="contact.html">Contact Us</a>
-            <a href="calendar.html">Calendar</a>
-            <button class="login-register-btn" id= "account-auth-button">
+            <!-- <a href="calendar.html">Calendar</a> -->
+            <!-- <button class="login-register-btn" id= "account-auth-button">
                 <span class="btn-text">Login / Register</span>
                 <span class="news-badge">For More News!</span>
-            </button>
+            </button> -->
            
         </section>
 
@@ -62,14 +63,69 @@
 
             <!-- Right half: Image carousel showcasing activities -->
             <section class ="main-welcome-second-half">
-                <div class="carousel">
+                <div class="carousel" aria-label="Key Club activities">
                     <div class="group">
-                        <div class="card">Community Service</div>
-                        <div class="card">Leadership Events</div>
-                        <div class="card">Volunteer Work</div>
-                        <div class="card">Team Building</div>
-                        <div class="card">Charity Drives</div>
-                        <div class="card">Social Events</div>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/communityservice.png"
+                                 alt="Southport Key Club community service"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Serve</span>
+                                <h3>Community Service</h3>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/leadershipevents.png"
+                                 alt="Southport Key Club leadership event"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Lead</span>
+                                <h3>Leadership Events</h3>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/volunteerwork.png"
+                                 alt="Southport Key Club volunteer work"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Give Back</span>
+                                <h3>Volunteer Work</h3>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/charityevents.png"
+                                 alt="Southport Key Club charity event"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Support</span>
+                                <h3>Charity Events</h3>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/holidayevents.png"
+                                 alt="Southport Key Club holiday event"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Celebrate</span>
+                                <h3>Holiday Events</h3>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <img src="assets/images/homepage slideshow/socialevents.png"
+                                 alt="Southport Key Club social event"
+                                 class="carousel-image">
+                            <div class="card-content">
+                                <span class="card-kicker">Connect</span>
+                                <h3>Social Events</h3>
+                            </div>
+                        </article>
+
                     </div>
                 </div>
             </section>
@@ -164,6 +220,53 @@
 
     
     <!-- ============================================ -->
+    <!-- CALLOUT ANNOUNCEMENT                         -->
+    <!-- ============================================ -->
+    <section class="callout-announcement">
+        <div class="announcement-content">
+            <p class="announcement-text">Don't miss our Callout Meeting this Friday, August 25th!</p>
+        </div>
+    </section>
+
+    
+    <!-- ============================================ -->
+    <!-- PHOTO GALLERY - Club moments                 -->
+    <!-- ============================================ -->
+    <section class="photo-gallery">
+        <div class="gallery-header">
+            <p class="eyebrow">Our Moments</p>
+            <h2>Callout Meetings</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="gallery-image-wrapper">
+                    <img src="assets/images/homepage/Untitled design (9) (1).png" alt="Club activity 1" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Community Service</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image-wrapper">
+                    <img src="assets/images/homepage/images.png" alt="Club activity 2" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Team Building</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="gallery-image-wrapper">
+                    <img src="assets/images/homepage/images2.png" alt="Club activity 3" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-caption">Leadership Events</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ============================================ -->
     <!-- CTA BANNER - Deadline countdown              -->
     <!-- ============================================ -->
     <section class="cta-banner">
@@ -202,7 +305,7 @@
                 <span class="close-btn" id ="loginCloseBtn">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="loginForm" onsubmit="handleLogin(event)">
+                <form id="loginForm" onsubmit="loginUser(event)">
                     <div class="form-group">
                         <label for="loginEmail">Email</label>
                         <input type="email" id="loginEmail" name="email" required placeholder="Enter your email">
