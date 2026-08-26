@@ -194,37 +194,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     // Countdown timer for September 4th deadline
-    const countdownTimer = () => {
-        const deadline = new Date('September 4, 2026 23:59:59').getTime();
-        
-        const updateCountdown = () => {
-            const now = new Date().getTime();
-            const timeLeft = deadline - now;
-            
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                
-                const daysEl = document.getElementById('days');
-                const hoursEl = document.getElementById('hours');
-                const minutesEl = document.getElementById('minutes');
-                const secondsEl = document.getElementById('seconds');
-                
-                if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
-                if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-                if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
-                if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-        };
-        
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    };
-    
-    countdownTimer();
+    /* =========================================================
+   COUNTDOWN TIMER — OCTOBER 4, 2026
+   ========================================================= */
 
+const countdownDays = document.getElementById("days");
+const countdownHours = document.getElementById("hours");
+const countdownMinutes = document.getElementById("minutes");
+const countdownSeconds = document.getElementById("seconds");
+
+// October 4, 2026 at midnight
+const countdownDate = new Date("October 4, 2026 00:00:00").getTime();
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance = countdownDate - now;
+
+    if (distance <= 0) {
+        countdownDays.textContent = "00";
+        countdownHours.textContent = "00";
+        countdownMinutes.textContent = "00";
+        countdownSeconds.textContent = "00";
+        return;
+    }
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
+
+    countdownDays.textContent = String(days).padStart(2, "0");
+    countdownHours.textContent = String(hours).padStart(2, "0");
+    countdownMinutes.textContent = String(minutes).padStart(2, "0");
+    countdownSeconds.textContent = String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
     const registerUser = async()=>{
         if (realRegisterEmail.value === ''){
             registerEmailError.classList.add('active');
