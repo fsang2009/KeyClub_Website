@@ -192,67 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let signUpErrorTimeout;
     let registerBirthdayTimer;
 
-    
-    // Countdown timer for September 4th deadline
-    /* =========================================================
-   COUNTDOWN TIMER — Sept 4, 2026
-   ========================================================= */
-
-const countdownDays = document.getElementById("days");
-const countdownHours = document.getElementById("hours");
-const countdownMinutes = document.getElementById("minutes");
-const countdownSeconds = document.getElementById("seconds");
-
-const countdownDate =
-    new Date("2026-09-04T00:00:00-04:00").getTime();
-
-function updateCountdown() {
-    const now = Date.now();
-    const distance = countdownDate - now;
-
-    if (distance <= 0) {
-        countdownDays.textContent = "00";
-        countdownHours.textContent = "00";
-        countdownMinutes.textContent = "00";
-        countdownSeconds.textContent = "00";
-        return;
-    }
-
-    const days = Math.floor(
-        distance / (1000 * 60 * 60 * 24)
-    );
-
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
-
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
-
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) / 1000
-    );
-
-    countdownDays.textContent =
-        String(days).padStart(2, "0");
-
-    countdownHours.textContent =
-        String(hours).padStart(2, "0");
-
-    countdownMinutes.textContent =
-        String(minutes).padStart(2, "0");
-
-    countdownSeconds.textContent =
-        String(seconds).padStart(2, "0");
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-setInterval(updateCountdown, 1000);
+   
     const registerUser = async()=>{
         if (realRegisterEmail.value === ''){
             registerEmailError.classList.add('active');
