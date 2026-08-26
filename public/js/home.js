@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Countdown timer for September 4th deadline
     /* =========================================================
-   COUNTDOWN TIMER — OCTOBER 4, 2026
+   COUNTDOWN TIMER — Sept 4, 2026
    ========================================================= */
 
 const countdownDays = document.getElementById("days");
@@ -203,13 +203,11 @@ const countdownHours = document.getElementById("hours");
 const countdownMinutes = document.getElementById("minutes");
 const countdownSeconds = document.getElementById("seconds");
 
-// October 4, 2026 at midnight
-const countdownDate = new Date("October 4, 2026 00:00:00").getTime();
+const countdownDate =
+    new Date("2026-09-04T00:00:00-04:00").getTime();
 
 function updateCountdown() {
-
-    const now = new Date().getTime();
-
+    const now = Date.now();
     const distance = countdownDate - now;
 
     if (distance <= 0) {
@@ -235,17 +233,24 @@ function updateCountdown() {
     );
 
     const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
+        (distance % (1000 * 60)) / 1000
     );
 
-    countdownDays.textContent = String(days).padStart(2, "0");
-    countdownHours.textContent = String(hours).padStart(2, "0");
-    countdownMinutes.textContent = String(minutes).padStart(2, "0");
-    countdownSeconds.textContent = String(seconds).padStart(2, "0");
+    countdownDays.textContent =
+        String(days).padStart(2, "0");
+
+    countdownHours.textContent =
+        String(hours).padStart(2, "0");
+
+    countdownMinutes.textContent =
+        String(minutes).padStart(2, "0");
+
+    countdownSeconds.textContent =
+        String(seconds).padStart(2, "0");
 }
 
 updateCountdown();
+setInterval(updateCountdown, 1000);
 
 setInterval(updateCountdown, 1000);
     const registerUser = async()=>{
