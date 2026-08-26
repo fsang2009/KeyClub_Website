@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Stop if the countdown elements are not on the page
     if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-    const deadline = new Date("2026-10-04T23:59:59-04:00").getTime();
+    const deadline = new Date("2026-9-04T23:59:59-04:00").getTime();
 
     const pad = (value) => String(value).padStart(2, "0");
 
